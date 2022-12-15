@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/">Our Users</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <!--li class="nav-item active">
+        <a class="nav-link" routerLink="/clientes" routerLinkActive="active">
+          <i class="fas fa-book"></i> Informe de Clientes
+        </a>
+      </li -->
+      
+      <li class="nav-item active">
+        <a class      = "nav-link"
+           routerLink = "#"
+           routerLinkActive = "active"
+           data-toggle = "modal"
+           data-target = "#NuevoCliente">
+           
+          <i class="fas fa-plus-circle"></i> Users </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" id="NuevoCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add new Users</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" >
+          <div class="form-group">
+              <label for="">Server</label>
+              <select class="form-control" [(ngModel)]="user.server" name="server"  >
+                <option value="US">United States</option>
+                <option value="CO">Colombia</option>
+              </select>   
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="user.name" name="name" maxlength="20" placeholder="Name" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="user.lastname" name="lastname" maxlength="20"  placeholder="Lastname" class="form-control"  >
+          </div>
+          <div class="form-group" (click)="GenerateEmail()" >
+            <button class="btn btn-success" > 
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+            </button>
+            <input type="mail" [(ngModel)]="user.email" disabled="" name="Email" placeholder="Correo Electronico" class="form-control"  >
+          </div>    
+          <div class="form-group">
+            <button class="btn btn-warning" (click)="NuevosClientes()" >
+              Crear
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

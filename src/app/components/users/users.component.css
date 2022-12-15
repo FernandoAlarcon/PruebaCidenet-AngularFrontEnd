@@ -1,0 +1,25 @@
+
+ .dot-on {
+    height: 25px;
+    width: 25px;
+    background-color:red;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .dot-off {
+    height: 25px;
+    width: 25px;
+    background-color:aqua;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .pointer {cursor: pointer;}
+
+  .div-table{
+    overflow: auto;
+    height:500px;
+  }
+
+  
